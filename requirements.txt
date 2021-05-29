@@ -1,0 +1,18 @@
+--trusted-host data-science-helpers.s3-website-us-west-2.amazonaws.com
+--find-links http://data-science-helpers.s3-website-us-west-2.amazonaws.com/data_science_helpers/
+data-science-helpers==0.0.1
+pandas==1.2.2
+numpy==1.20.1
+joblib==1.0.1
+tqdm==4.59.0
+scikit-learn==0.24.1
+xgboost==1.1.1
+hyperopt==0.2.4
+tune-sklearn==0.2.1
+matplotlib==3.2.0
+lightgbm==2.3.1
+shap==0.36.0
+PyALE==1.1.0
+flask==1.1.2
+flask_talisman==0.7.0
+gunicorn==20.0.4

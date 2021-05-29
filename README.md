@@ -1,1 +1,1 @@
-# world-series-projections-ecs
+# world-series-projections

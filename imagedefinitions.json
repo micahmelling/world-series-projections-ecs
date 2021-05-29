@@ -1,0 +1,6 @@
+[
+  {
+    "name": "world-series-projections",
+    "imageUri": "ECR_URI:latest"
+  }
+]
