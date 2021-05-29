@@ -17,8 +17,8 @@ def initialize_app():
     model = joblib.load('model.pkl')
     global data
     data = joblib.load('data/data.pkl')
-    # if os.environ['ENVIRONMENT'] == 'local':
-    #     aws.set_aws_environment_variables(AWS_KEYS_SECRET)
+    if os.environ['ENVIRONMENT'] == 'local':
+        aws.set_aws_environment_variables(AWS_KEYS_SECRET)
     return app
 
 
