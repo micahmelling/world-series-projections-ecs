@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Model UI</h1>
+
+<p>Enter the year for which you want to receive predictions.</p>
+
+<form action="/model_interface" method="POST">
+  <label for="year">year:</label>
+  <input type="text" id="year" name="year"><br><br>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<h2>Predictions</h2>
+{{ predictions | safe }}
+
+</body>
+</html>
