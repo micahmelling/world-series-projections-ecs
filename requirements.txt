@@ -1,6 +1,6 @@
---trusted-host data-science-helpers.s3-website-us-west-2.amazonaws.com
---find-links http://data-science-helpers.s3-website-us-west-2.amazonaws.com/data_science_helpers/
-data-science-helpers==0.0.1
+--trusted-host private-package-url
+--find-links private-package-url
+private_package_name==0.0.1
 pandas==1.2.2
 numpy==1.20.1
 joblib==1.0.1
@@ -16,3 +16,4 @@ PyALE==1.1.0
 flask==1.1.2
 flask_talisman==0.7.0
 gunicorn==20.0.4
+pytest==6.2.2

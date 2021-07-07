@@ -9,8 +9,8 @@ LOGGING_S3_BUCKET_NAME = 'world-series-predictions-app-logs'
 ENVIRONMENT = os.environ['ENVIRONMENT']
 
 if ENVIRONMENT in ['local', 'stage']:
-    DATABASE_SECRET = 'stage-world-series-ecs-mysql'
+    DATABASE_SECRET = 'stage-world-series-svc-mysql'
 elif ENVIRONMENT == 'prod':
-    DATABASE_SECRET = 'prod-world-series-ecs-mysql'
+    DATABASE_SECRET = 'prod-world-series-svc-mysql'
 else:
     raise Exception(f'ENVIRONMENT must be one of local, stage, or prod. {ENVIRONMENT} was passed.')

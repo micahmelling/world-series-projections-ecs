@@ -37,12 +37,6 @@ def get_password_for_username(username, db_secret):
     from world_series.app_credentials
     where username = '{username}';
     '''
-    # mysql_conn_dict = aws.get_secrets_manager_secret(db_secret)
-    mysql_conn_dict = {
-        'host': 'churn-databse.cdbxl5rdojax.us-west-2.rds.amazonaws.com',
-        'user': 'churn_model',
-        'password': 'adfVg6a_hbzwrdaYa_kbZ',
-        'database': 'world_series'
-    }
+    mysql_conn_dict = aws.get_secrets_manager_secret(db_secret)
     df = pd.read_sql(query, db.connect_to_mysql(mysql_conn_dict))
     return df['password'][0]

@@ -12,12 +12,13 @@ phases:
       - echo installing libraries and running unit tests...
       - pip install -r requirements.txt
       - echo pulling files from s3...
-      - aws s3 cp s3://world-series-predictions-model/model.zip .
-      - unzip file.zip
-      - python -m pytest tests.py
+      - rm model.pkl
+      - aws s3 cp s3://insert-s3-bucket-name/model.zip .
+      - unzip model.zip
+      - python -m pytest tests/tests.py
       - echo logging into ecr...
       - $(aws ecr get-login --no-include-email --region us-west-2)
-      - REPOSITORY_URI=REPOSITORY_URI
+      - REPOSITORY_URI=INSERT_ECR_URI
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
@@ -30,7 +31,7 @@ phases:
       - echo pushing docker image...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - printf '[{"name":"world-series-projections","imageUri":"%s"}]' $REPOSITORY_URI:latest > taskdefinition.json
+      - printf '[{"name":"taskdef-name","imageUri":"%s"}]' $REPOSITORY_URI:latest > taskdefinition.json
 artifacts:
   files:
     - '**/*'

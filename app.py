@@ -116,7 +116,3 @@ def predict():
         output_payload = session.get("output")
         output_payload["logging_timestamp"] = str(get_current_timestamp())
         log_payload_to_s3(input_payload, output_payload, uid, LOGGING_S3_BUCKET_NAME)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
